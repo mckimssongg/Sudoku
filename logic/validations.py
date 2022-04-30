@@ -1,6 +1,7 @@
 '''
 En este script estara la logica de nuestro juego, donde se veran
 las validaciones:
+
 1. Que el numero que coloquemos en una casilla no se repita
   1.1 Que no se repita en toda la fila
   1.2 Que no se repita en toda la columna
