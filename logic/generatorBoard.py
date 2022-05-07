@@ -3,19 +3,21 @@ Modulo que generara la matriz
 '''
 import random
 import os
-from validations import Validations
+from .validations import Validations
 # borrarPantalla = lambda: os.system ("cls")
+
 
 def generator():
     Grid = [["" for x in range(9)] for y in range(9)]
 
-    for i in range(35): #numeros aleatorios que tendra la matriz
+    for i in range(25):  # numeros aleatorios que tendra la matriz
         row = random.randrange(9)
         col = random.randrange(9)
-        num = random.randrange(1,10)
-        Grid[row][col]= str(num);
+        num = random.randrange(1, 10)
+        Grid[row][col] = str(num)
 
     return Grid
+
 
 def tests(Matriz):
     '''
@@ -25,9 +27,11 @@ def tests(Matriz):
     test1 = val.check_columns()
     test2 = val.check_row()
     test3 = val.subframesCheck()
-    test3 = (False not in test3[0]) and (False not in test3[1]) and (False not in test3[2])
+    test3 = (False not in test3[0]) and (
+        False not in test3[1]) and (False not in test3[2])
     test4 = val.check_data()
     return (test1 and test2 and test3 and test4)
+
 
 def matriz():
     '''
@@ -35,11 +39,11 @@ def matriz():
     no necesita recibir ningun parametro
     Aun falta optimizarlo pero pero siempre sera esta la funcion generadora
     '''
-    Matriz  = generator()
+    Matriz = generator()
     is_valid = tests(Matriz)
     intento = 1
     while not is_valid:
-        Matriz  = generator()
+        Matriz = generator()
         is_valid = tests(Matriz)
-        intento +=1
+        intento += 1
     return Matriz
