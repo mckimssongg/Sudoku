@@ -3,6 +3,12 @@ from tkinter import ttk
 from logic.generatorBoard import matriz, tests
 
 
+def get_matrix(event, i, j):
+    global Matriz
+    Matriz[i][j] = event.widget.get()
+    print(Matriz)
+
+
 # crear tabla de sudoku y dibujar con tkinter
 def create_table(Matriz):
     root = Tk()
@@ -23,9 +29,9 @@ def create_table(Matriz):
             else:
                 entry.config(state="normal")
 
-            # Meter los numeros en la matriz
-            entry.bind("<KeyRelease>", lambda event, i=i, j=j:
-                       change_value(event, i, j))
+            # obtener completo de la matriz
+            entry.bind("<KeyRelease>", lambda event,
+                       i=i, j=j: get_matrix(event, i, j))
 
     root.mainloop()
 
