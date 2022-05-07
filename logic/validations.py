@@ -119,6 +119,7 @@ class Validations:
                     resultado.append(self.check_list(subcuadro))
         return resultado
 
+
 # if __name__ == "__main__":
 #     validations = Validations(board)
 #     print(validations.check_data())

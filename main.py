@@ -34,19 +34,16 @@ def main(Matriz):
         actMatriz = [actMatriz[i:i + 9] for i in range(0, len(actMatriz), 9)]
         return actMatriz
 
-    obtenerMatriz()
+    print('matriz act', obtenerMatriz())
 
     # crear una un boton para verificar la solucion con la funcion tests
     button = ttk.Button(root, text="Verificar",
                         command=lambda: tests(obtenerMatriz()))
-
     button.grid(row=9, column=0, columnspan=9)
     button.config(width=20)
-
     message = ttk.Label(
         root, text="Presione el boton para verificar la solucion")
     message.grid(row=10, column=0, columnspan=9)
-
     root.mainloop()
 
 
