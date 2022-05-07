@@ -42,9 +42,7 @@ def matriz():
     '''
     Matriz = generator()
     is_valid = tests(Matriz)
-    intento = 1
     while not is_valid:
         Matriz = generator()
         is_valid = tests(Matriz)
-        intento += 1
     return Matriz
