@@ -22,6 +22,7 @@ def generator():
 def tests(Matriz):
     '''
     validaciones para que la matriz sea resoluble
+    o bien que no tenga numeros repetidos
     '''
     val = Validations(Matriz)
     test1 = val.check_columns()
